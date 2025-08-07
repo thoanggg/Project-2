@@ -1,4 +1,4 @@
-\# A Pixel-Based Approach for Aerial Image Segmentation of Sentinel-2 Imagery
+# A Pixel-Based Approach for Aerial Image Segmentation of Sentinel-2 Imagery
 
 
 
@@ -6,7 +6,7 @@ This project implements and compares three machine learning approaches for land 
 
 
 
-\## 🎯 Project Overview
+## 🎯 Project Overview
 
 
 
@@ -14,17 +14,17 @@ The rapid urbanization of Hanoi poses significant challenges for land use manage
 
 
 
-\- Monitor urban growth and land use changes
+- Monitor urban growth and land use changes
 
-\- Support intelligent land management systems
+- Support intelligent land management systems
 
-\- Provide geospatial data for urban planning authorities
+- Provide geospatial data for urban planning authorities
 
-\- Detect unauthorized land conversions
+- Detect unauthorized land conversions
 
 
 
-\## 📊 Results Summary
+## 📊 Results Summary
 
 
 
@@ -32,55 +32,55 @@ The rapid urbanization of Hanoi poses significant challenges for land use manage
 
 |-------|------------------|---------------|
 
-| \*\*1D CNN\*\* | \*\*95.26%\*\* | Complex spectral patterns, mixed land covers |
+| **1D CNN** | **95.26%** | Complex spectral patterns, mixed land covers |
 
-| \*\*Random Forest\*\* | 91.75% | Fast processing, interpretable results |
+| **Random Forest** | 91.75% | Fast processing, interpretable results |
 
-| \*\*SVM\*\* | 89.84% | Small datasets, linear class boundaries |
-
-
-
-\## 🗺️ Study Area
+| **SVM** | 89.84% | Small datasets, linear class boundaries |
 
 
 
-\- \*\*Location\*\*: Central Hanoi, Vietnam
-
-\- \*\*Districts\*\*: Tay Ho, Ba Dinh, Dong Da, Cau Giay, Hoan Kiem, Hai Ba Trung
-
-\- \*\*Characteristics\*\*: Dense urban core with mixed land use patterns
+## 🗺️ Study Area
 
 
 
-\## 🏷️ Land Cover Classes
+- **Location**: Central Hanoi, Vietnam
+
+- **Districts**: Tay Ho, Ba Dinh, Dong Da, Cau Giay, Hoan Kiem, Hai Ba Trung
+
+- **Characteristics**: Dense urban core with mixed land use patterns
 
 
 
-1\. \*\*Water\*\* - Lakes, rivers (e.g., West Lake, To Lich River)
-
-2\. \*\*Built Area\*\* - High-density residential and commercial zones
-
-3\. \*\*Vegetation\*\* - Parks, tree-lined roads, green spaces
-
-4\. \*\*Others\*\* - Bare land, construction sites, parking lots
+## 🏷️ Land Cover Classes
 
 
 
-\## 📡 Data Source
+1. **Water** - Lakes, rivers (e.g., West Lake, To Lich River)
+
+2. **Built Area** - High-density residential and commercial zones
+
+3. **Vegetation** - Parks, tree-lined roads, green spaces
+
+4. **Others** - Bare land, construction sites, parking lots
 
 
 
-\- \*\*Satellite\*\*: Sentinel-2 Level 2A
-
-\- \*\*Acquisition Date\*\*: February 18, 2020
-
-\- \*\*Image ID\*\*: L2A\_T48QWJ\_A024325\_20200218T033333
-
-\- \*\*Source\*\*: Copernicus Open Access Hub
+## 📡 Data Source
 
 
 
-\### Selected Spectral Bands
+- **Satellite**: Sentinel-2 Level 2A
+
+- **Acquisition Date**: February 18, 2020
+
+- **Image ID**: L2A_T48QWJ_A024325_20200218T033333
+
+- **Source**: Copernicus Open Access Hub
+
+
+
+### Selected Spectral Bands
 
 
 
@@ -102,7 +102,7 @@ The rapid urbanization of Hanoi poses significant challenges for land use manage
 
 
 
-\*\*Additional Feature\*\*: NDVI (Normalized Difference Vegetation Index)
+**Additional Feature**: NDVI (Normalized Difference Vegetation Index)
 
 ```
 
@@ -112,11 +112,11 @@ NDVI = (B8 - B4) / (B8 + B4)
 
 
 
-\## 🛠️ Requirements
+## 🛠️ Requirements
 
 
 
-\### Python Libraries
+### Python Libraries
 
 ```
 
@@ -140,53 +140,53 @@ keras
 
 
 
-\### Software
+### Software
 
-\- \*\*QGIS\*\* (for data preprocessing and ground truth creation)
+- **QGIS** (for data preprocessing and ground truth creation)
 
-\- \*\*Semi-Automatic Classification Plugin (SCP)\*\* (for ROI digitization)
+- **Semi-Automatic Classification Plugin (SCP)** (for ROI digitization)
 
-\- \*\*Python 3.x\*\* (for model implementation)
-
-
-
-\## 🚀 Getting Started
+- **Python 3.x** (for model implementation)
 
 
 
-\### 1. Data Preparation
-
-1\. Download Sentinel-2 Level 2A imagery from Copernicus Open Access Hub
-
-2\. Extract and preprocess spectral bands in QGIS
-
-3\. Calculate NDVI using the raster calculator
-
-4\. Create training data using SCP plugin
+## 🚀 Getting Started
 
 
 
-\### 2. Model Training
+### 1. Data Preparation
+
+1. Download Sentinel-2 Level 2A imagery from Copernicus Open Access Hub
+
+2. Extract and preprocess spectral bands in QGIS
+
+3. Calculate NDVI using the raster calculator
+
+4. Create training data using SCP plugin
 
 
 
-\#### Support Vector Machine (SVM)
+### 2. Model Training
+
+
+
+#### Support Vector Machine (SVM)
 
 ```python
 
 from sklearn.svm import SVC
 
-from sklearn.model\_selection import GridSearchCV
+from sklearn.model_selection import GridSearchCV
 
 
 
-\# Parameter tuning
+# Parameter tuning
 
-param\_grid = {
+param_grid = {
 
-&nbsp;   'C': \[2\*\*i for i in range(-2, 8)],
+&nbsp;   'C': [2**i for i in range(-2, 8)],
 
-&nbsp;   'gamma': \[2\*\*i for i in range(-5, 5)]
+&nbsp;   'gamma': [2**i for i in range(-5, 5)]
 
 }
 
@@ -194,13 +194,13 @@ param\_grid = {
 
 svm = SVC(kernel='rbf')
 
-svm\_grid = GridSearchCV(svm, param\_grid, cv=5)
+svm_grid = GridSearchCV(svm, param_grid, cv=5)
 
 ```
 
 
 
-\#### Random Forest
+#### Random Forest
 
 ```python
 
@@ -208,13 +208,13 @@ from sklearn.ensemble import RandomForestClassifier
 
 
 
-\# Parameter tuning
+# Parameter tuning
 
 rf = RandomForestClassifier(
 
-&nbsp;   n\_estimators=\[100, 200, 500],
+&nbsp;   n_estimators=[100, 200, 500],
 
-&nbsp;   max\_features=range(1, 11)
+&nbsp;   max_features=range(1, 11)
 
 )
 
@@ -222,7 +222,7 @@ rf = RandomForestClassifier(
 
 
 
-\#### 1D CNN Architecture
+#### 1D CNN Architecture
 
 ```python
 
@@ -232,9 +232,9 @@ from tensorflow.keras import layers
 
 
 
-model = tf.keras.Sequential(\[
+model = tf.keras.Sequential([
 
-&nbsp;   layers.Conv1D(64, 2, activation='relu', input\_shape=(7, 1)),
+&nbsp;   layers.Conv1D(64, 2, activation='relu', input_shape=(7, 1)),
 
 &nbsp;   layers.BatchNormalization(),
 
@@ -272,21 +272,21 @@ model = tf.keras.Sequential(\[
 
 
 
-\### 3. Dataset Split
+### 3. Dataset Split
 
-\- \*\*Total labeled pixels\*\*: 18,681
+- **Total labeled pixels**: 18,681
 
-\- \*\*Training set\*\*: 14,944 pixels (80%)
+- **Training set**: 14,944 pixels (80%)
 
-\- \*\*Testing set\*\*: 3,737 pixels (20%)
-
-
-
-\## 📈 Model Performance
+- **Testing set**: 3,737 pixels (20%)
 
 
 
-\### Class-wise F1-Scores
+## 📈 Model Performance
+
+
+
+### Class-wise F1-Scores
 
 
 
@@ -294,97 +294,97 @@ model = tf.keras.Sequential(\[
 
 |-------|-----|---------------|---------|
 
-| Water | 0.99 | 0.98 | \*\*0.99\*\* |
+| Water | 0.99 | 0.98 | **0.99** |
 
-| Built Area | 0.94 | 0.95 | \*\*0.98\*\* |
+| Built Area | 0.94 | 0.95 | **0.98** |
 
-| Vegetation | 0.59 | 0.63 | \*\*0.77\*\* |
+| Vegetation | 0.59 | 0.63 | **0.77** |
 
-| Others | 0.76 | 0.75 | \*\*0.88\*\* |
-
-
-
-\### Key Findings
+| Others | 0.76 | 0.75 | **0.88** |
 
 
 
-1\. \*\*CNN Superior Performance\*\*: The 1D CNN model achieved the highest accuracy (95.26%) by effectively learning spectral patterns
-
-2\. \*\*Class Confusion\*\*: Most errors occurred between vegetation and bare land/construction sites due to spectral similarity
-
-3\. \*\*NDVI Importance\*\*: Adding NDVI significantly improved vegetation vs. others classification
-
-4\. \*\*Urban Complexity\*\*: Traditional ML methods (SVM, RF) struggled with spectrally mixed urban land covers
+### Key Findings
 
 
 
-\## 🔄 Applications
+1. **CNN Superior Performance**: The 1D CNN model achieved the highest accuracy (95.26%) by effectively learning spectral patterns
+
+2. **Class Confusion**: Most errors occurred between vegetation and bare land/construction sites due to spectral similarity
+
+3. **NDVI Importance**: Adding NDVI significantly improved vegetation vs. others classification
+
+4. **Urban Complexity**: Traditional ML methods (SVM, RF) struggled with spectrally mixed urban land covers
 
 
 
-\### Urban Planning \& Management
-
-\- Monitor urban growth patterns
-
-\- Manage infrastructure development
-
-\- Preserve green spaces
-
-\- Support sustainable city planning
+## 🔄 Applications
 
 
 
-\### Environmental Monitoring
+### Urban Planning & Management
 
-\- Track vegetation cover changes
+- Monitor urban growth patterns
 
-\- Monitor water body variations
+- Manage infrastructure development
 
-\- Detect illegal land conversions
+- Preserve green spaces
 
-\- Assess environmental degradation
-
-
-
-\### Smart City Development
-
-\- Integrate with GIS systems
-
-\- Enable data-driven governance
-
-\- Support decision-making tools
-
-\- Facilitate proactive land management
+- Support sustainable city planning
 
 
 
-\### Disaster Risk Management
+### Environmental Monitoring
 
-\- Flood risk assessment
+- Track vegetation cover changes
 
-\- Emergency response planning
+- Monitor water body variations
 
-\- Climate resilience strategies
+- Detect illegal land conversions
 
-
-
-\## 🔮 Future Work
+- Assess environmental degradation
 
 
 
-1\. \*\*Spatial Context Integration\*\*: Implement 2D CNNs or hybrid spatial-spectral architectures
+### Smart City Development
 
-2\. \*\*Temporal Analysis\*\*: Develop time-series models for land-use change detection
+- Integrate with GIS systems
 
-3\. \*\*Transfer Learning\*\*: Adapt models for other Vietnamese cities
+- Enable data-driven governance
 
-4\. \*\*Real-time Processing\*\*: Implement automated monitoring systems
+- Support decision-making tools
 
-5\. \*\*Multi-sensor Fusion\*\*: Combine Sentinel-2 with other satellite data
+- Facilitate proactive land management
 
 
 
-\## 👥 Contributing
+### Disaster Risk Management
+
+- Flood risk assessment
+
+- Emergency response planning
+
+- Climate resilience strategies
+
+
+
+## 🔮 Future Work
+
+
+
+1. **Spatial Context Integration**: Implement 2D CNNs or hybrid spatial-spectral architectures
+
+2. **Temporal Analysis**: Develop time-series models for land-use change detection
+
+3. **Transfer Learning**: Adapt models for other Vietnamese cities
+
+4. **Real-time Processing**: Implement automated monitoring systems
+
+5. **Multi-sensor Fusion**: Combine Sentinel-2 with other satellite data
+
+
+
+## 👥 Contributing
 
 
 
@@ -392,45 +392,31 @@ This project was developed as part of research at Hanoi University of Science an
 
 
 
-\- Model improvements
+- Model improvements
 
-\- Additional study areas
+- Additional study areas
 
-\- Performance optimizations
+- Performance optimizations
 
-\- Documentation enhancements
-
-
-
-\## 📄 Citation
+- Documentation enhancements
 
 
 
-If you use this work, please cite:
 
-```
 
-Vu Duc Thang, "A Pixel-Based Approach for Aerial Image Segmentation of Sentinel-2 Imagery", 
-
-Hanoi University of Science and Technology, 2025
-
-```
+## 📞 Contact
 
 
 
-\## 📞 Contact
+- **Student**: Vu Duc Thang (thang.vd225553@sis.hust.edu.vn)
+
+- **Supervisor**: PhD Tran Nguyen Ngoc
+
+- **Institution**: School of Information and Communications Technology, Hanoi University of Science and Technology
 
 
 
-\- \*\*Student\*\*: Vu Duc Thang (thang.vd225553@sis.hust.edu.vn)
-
-\- \*\*Supervisor\*\*: PhD Tran Nguyen Ngoc
-
-\- \*\*Institution\*\*: School of Information and Communications Technology, Hanoi University of Science and Technology
-
-
-
-\## 📚 References
+## 📚 References
 
 
 
@@ -442,5 +428,5 @@ Key references include works on Sentinel-2 classification, CNN architectures for
 
 
 
-\*This project demonstrates the effectiveness of deep learning approaches in urban remote sensing applications and provides a foundation for scalable land cover monitoring in Vietnam and beyond.\*
+*This project demonstrates the effectiveness of deep learning approaches in urban remote sensing applications and provides a foundation for scalable land cover monitoring in Vietnam and beyond.*
 
